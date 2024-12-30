@@ -1,0 +1,123 @@
+*, 
+*::after, 
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background-color: #8081d4;
+    width: 100vw;
+    height: 100vh;
+}
+
+input {
+    width: 190px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0.3em 0.2em;
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 0.4em;
+}
+
+.wrapper {
+    position: relative;
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    position: relative;
+    margin-top: 2em;
+    width: 90%;
+    height: 100%;
+}
+
+.boxHeader {
+    position: relative;
+    background-color: #201c38;
+    width: 100%;
+    height: 20%;
+}
+
+.boxUnder {
+    background-color: #fff;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.toDo {
+    position: relative;
+    background-color: gray;
+    width: 90%;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.2em 0em;
+    display: none;
+}
+
+
+.error {
+    position: absolute;
+    left: 5%;
+    bottom: 3%;
+    color: #fff;
+    font-weight: 500;
+    display: none;
+    
+}
+
+.errorBox {
+    background-color: red;
+    width: 280px;
+    height: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.textError {
+    padding: 0.3em 0.2em;
+}
