@@ -42,6 +42,13 @@ const addToDo = (e) => {
         deleteImg.src = './icon/delete.png';  // Ścieżka do ikony
         deleteImg.alt = 'kosz';
 
+        // ikonka edycji
+        const editImg = document.createElement('img')
+        editImg.classList.add ('img')
+        editImg.src = './icon/edit.png'
+        editImg.alt = 'edycja'
+
+        newItem.appendChild(editImg)
         newItem.appendChild(deleteImg)
         newDiv.appendChild(newItem);
 
