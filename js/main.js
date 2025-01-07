@@ -70,4 +70,11 @@ const deleteToDo = (e) => {
 
 
 btn.addEventListener('click', addToDo)
-boxUnder.addEventListener('click', deleteToDo);  
+boxUnder.addEventListener('click', (e) => {
+    if (e.target.alt === 'kosz') {
+        deleteToDo(e)
+    }
+    else {
+        // openWindowToEdit(e)
+    }
+});  
