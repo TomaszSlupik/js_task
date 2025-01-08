@@ -3,6 +3,8 @@ const inputTask = document.querySelector('.inputTask')
 const errorMsg = document.querySelector('.error')
 const toDo = document.querySelector('.toDo')
 const boxUnder = document.querySelector('.boxUnder') 
+const boxEdit = document.querySelector('.boxEdit') 
+const editTask = document.querySelector('#editTask')
 
 // dodanie nowego zadania:
 const addToDo = (e) => {
@@ -69,12 +71,21 @@ const deleteToDo = (e) => {
 }
 
 
+const openWindowToEdit = (e) => {
+    currentTask = e.target.closest('.toDo');
+    // const taskText = currentTask.querySelector('p').textContent;
+    // editTask.value = taskText;
+    boxEdit.style.display = 'flex';
+
+}
+
+
 btn.addEventListener('click', addToDo)
 boxUnder.addEventListener('click', (e) => {
     if (e.target.alt === 'kosz') {
         deleteToDo(e)
     }
     else {
-        // openWindowToEdit(e)
+        openWindowToEdit(e)
     }
 });  
