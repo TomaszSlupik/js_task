@@ -5,6 +5,7 @@ const toDo = document.querySelector('.toDo')
 const boxUnder = document.querySelector('.boxUnder') 
 const boxEdit = document.querySelector('.boxEdit') 
 const editTask = document.querySelector('#editTask')
+const saveEditBtn = document.querySelector('.saveEditBtn') 
 
 // dodanie nowego zadania:
 const addToDo = (e) => {
@@ -73,12 +74,31 @@ const deleteToDo = (e) => {
 
 const openWindowToEdit = (e) => {
     currentTask = e.target.closest('.toDo');
-    // const taskText = currentTask.querySelector('p').textContent;
-    // editTask.value = taskText;
     boxEdit.style.display = 'flex';
+
+    // ustawiam wartość dla editTask w inpucie 
+    // oraz szukam pierwszego p i biore 
+    // z niego wartosc 
+    editTask.value = currentTask.querySelector('p').textContent;
 
 }
 
+
+const saveTask = (e) => {
+    e.preventDefault();
+      // Sprawdzam, czy w formularzu jest treść
+      if (editTask.value !== "") {
+        // Aktualizuję tekst zadania
+        currentTask.querySelector('p').textContent = editTask.value;
+        
+        // Ukrywam okno
+        boxEdit.style.display = 'none';
+
+    } else {
+        // Jeżeli nie ma tekstu, komunikat o błędzie
+        alert('Musisz wpisać treść zadania!');
+    }
+}
 
 btn.addEventListener('click', addToDo)
 boxUnder.addEventListener('click', (e) => {
@@ -89,3 +109,5 @@ boxUnder.addEventListener('click', (e) => {
         openWindowToEdit(e)
     }
 });  
+
+saveEditBtn.addEventListener("click", saveTask)
